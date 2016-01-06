@@ -1,4 +1,4 @@
-package com.demo.config.interceptor;
+package com.atms.config.interceptor;
 
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;

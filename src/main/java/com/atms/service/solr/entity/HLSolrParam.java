@@ -1,4 +1,4 @@
-package com.demo.service.solr.entity;
+package com.atms.service.solr.entity;
 
 import java.util.Map;
 

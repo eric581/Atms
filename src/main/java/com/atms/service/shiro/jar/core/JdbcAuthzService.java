@@ -1,7 +1,7 @@
-package com.demo.service.shiro.jar.core;
+package com.atms.service.shiro.jar.core;
 
 
-import com.demo.service.shiro.jar.core.handler.AuthzHandler;
+import com.atms.service.shiro.jar.core.handler.AuthzHandler;
 
 import java.util.Map;
 

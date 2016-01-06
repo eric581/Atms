@@ -16,9 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.demo.service.shiro.jar;
+package com.atms.service.shiro.jar;
 
-import com.demo.service.shiro.jar.core.ReturnKit;
+import com.atms.service.shiro.jar.core.ReturnKit;
 import com.jfinal.kit.JsonKit;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.SessionException;

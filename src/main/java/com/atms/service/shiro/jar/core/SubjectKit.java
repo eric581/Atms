@@ -1,4 +1,4 @@
-package com.demo.service.shiro.jar.core;
+package com.atms.service.shiro.jar.core;
 
 import com.jfinal.plugin.activerecord.Model;
 import org.apache.commons.lang3.ArrayUtils;

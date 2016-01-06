@@ -1,6 +1,6 @@
-package com.demo.service.shiro;
+package com.atms.service.shiro;
 
-import com.demo.entity.User;
+import com.atms.entity.User;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;

@@ -1,6 +1,6 @@
-package com.demo.config.routes;
+package com.atms.config.routes;
 
-import com.demo.controller.BlogController;
+import com.atms.controller.BlogController;
 import com.jfinal.config.Routes;
 
 /**

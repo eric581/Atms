@@ -1,8 +1,8 @@
-package com.demo.controller;
+package com.atms.controller;
 
-import com.demo.entity.Blog;
-import com.demo.config.interceptor.BlogInterceptor;
-import com.demo.config.validator.BlogValidator;
+import com.atms.entity.Blog;
+import com.atms.config.interceptor.BlogInterceptor;
+import com.atms.config.validator.BlogValidator;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.redis.Redis;

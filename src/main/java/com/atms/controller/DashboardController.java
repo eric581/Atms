@@ -1,4 +1,4 @@
-package com.demo.controller;
+package com.atms.controller;
 
 import com.jfinal.core.Controller;
 import org.apache.log4j.Logger;

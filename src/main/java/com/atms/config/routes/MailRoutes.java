@@ -1,6 +1,6 @@
-package com.demo.config.routes;
+package com.atms.config.routes;
 
-import com.demo.controller.MailController;
+import com.atms.controller.MailController;
 import com.jfinal.config.Routes;
 
 /**

@@ -1,4 +1,4 @@
-package com.demo.service.shiro.jar.listeners;
+package com.atms.service.shiro.jar.listeners;
 
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.SessionListener;

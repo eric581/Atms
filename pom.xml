@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.eric</groupId>
-    <artifactId>jfinal</artifactId>
+    <artifactId>atms</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -148,11 +148,6 @@
             <artifactId>solr-solrj</artifactId>
             <version>${org.apache.solr}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>cn.dreampie</groupId>-->
-            <!--<artifactId>jfinal-shiro</artifactId>-->
-            <!--<version>0.2</version>-->
-        <!--</dependency>-->
     </dependencies>
 
 </project>

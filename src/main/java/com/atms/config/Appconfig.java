@@ -1,4 +1,4 @@
-//package com.demo.config;
+//package com.atms.config;
 //
 //
 //import cn.dreampie.shiro.core.ShiroInterceptor;

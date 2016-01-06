@@ -1,7 +1,7 @@
-package com.demo.config.routes;
+package com.atms.config.routes;
 
-import com.demo.controller.CommonController;
-import com.demo.controller.DashboardController;
+import com.atms.controller.CommonController;
+import com.atms.controller.DashboardController;
 import com.jfinal.config.Routes;
 
 /**

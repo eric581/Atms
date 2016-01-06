@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.demo.service.shiro.jar.core;
+package com.atms.service.shiro.jar.core;
 
-import com.demo.service.shiro.jar.core.handler.*;
+import com.atms.service.shiro.jar.core.handler.*;
 import com.jfinal.config.Routes;
 import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;

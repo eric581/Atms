@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.demo.service.shiro.jar.core;
+package com.atms.service.shiro.jar.core;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;

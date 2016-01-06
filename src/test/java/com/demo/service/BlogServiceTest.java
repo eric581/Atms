@@ -1,5 +1,6 @@
 package com.demo.service;
 
+import com.atms.service.BlogService;
 import com.jfinal.aop.Enhancer;
 import junit.framework.TestCase;
 

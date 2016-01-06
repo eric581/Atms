@@ -1,4 +1,4 @@
-package com.demo.service.shiro.jar.exception;
+package com.atms.service.shiro.jar.exception;
 
 import org.apache.shiro.authc.AuthenticationException;
 

@@ -97,7 +97,7 @@
 
 			$.support.transition && this.$element.hasClass('fade') ?
 				this.hideWithTransition() :
-				this.hideModal();
+				this.h.atmsdal();
 		},
 
 		layout: function () {
@@ -192,16 +192,16 @@
 			var that = this
 				, timeout = setTimeout(function () {
 					that.$element.off($.support.transition.end);
-					that.hideModal();
+					that.h.atmsdal();
 				}, 500);
 
 			this.$element.one($.support.transition.end, function () {
 				clearTimeout(timeout);
-				that.hideModal();
+				that.h.atmsdal();
 			});
 		},
 
-		hideModal: function () {
+		h.atmsdal: function () {
 			var prop = this.options.height ? 'height' : 'max-height';
 			var value = this.options.height || this.options.maxHeight;
 

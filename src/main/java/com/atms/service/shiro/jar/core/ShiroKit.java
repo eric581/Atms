@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.demo.service.shiro.jar.core;
+package com.atms.service.shiro.jar.core;
 
-import com.demo.service.shiro.jar.core.handler.AuthzHandler;
-import com.demo.service.shiro.jar.core.handler.JdbcPermissionAuthzHandler;
+import com.atms.service.shiro.jar.core.handler.AuthzHandler;
+import com.atms.service.shiro.jar.core.handler.JdbcPermissionAuthzHandler;
 import org.apache.shiro.util.AntPathMatcher;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;

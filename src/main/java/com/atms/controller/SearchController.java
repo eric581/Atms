@@ -1,7 +1,7 @@
-package com.demo.controller;
+package com.atms.controller;
 
-import com.demo.service.SearchService;
-import com.demo.service.solr.PdfSearch;
+import com.atms.service.SearchService;
+import com.atms.service.solr.PdfSearch;
 import com.jfinal.aop.Enhancer;
 import com.jfinal.core.Controller;
 import org.apache.log4j.Logger;

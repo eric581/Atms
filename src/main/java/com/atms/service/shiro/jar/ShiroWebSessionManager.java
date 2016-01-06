@@ -1,4 +1,4 @@
-package com.demo.service.shiro.jar;
+package com.atms.service.shiro.jar;
 
 import org.apache.shiro.session.ExpiredSessionException;
 import org.apache.shiro.session.InvalidSessionException;

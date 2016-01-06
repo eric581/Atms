@@ -1,6 +1,6 @@
-package com.demo.service.shiro.jar;
+package com.atms.service.shiro.jar;
 
-import com.demo.service.shiro.jar.hasher.Hasher;
+import com.atms.service.shiro.jar.hasher.Hasher;
 import com.jfinal.plugin.activerecord.Model;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

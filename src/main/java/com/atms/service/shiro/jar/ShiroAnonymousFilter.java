@@ -1,4 +1,4 @@
-package com.demo.service.shiro.jar;
+package com.atms.service.shiro.jar;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

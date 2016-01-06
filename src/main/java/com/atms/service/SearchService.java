@@ -1,11 +1,11 @@
-package com.demo.service;
+package com.atms.service;
 
-import com.demo.service.solr.PdfSearch;
-import com.demo.service.solr.SolrUtil;
-import com.demo.service.solr.entity.HLSolrParam;
-import com.demo.service.solr.entity.HLSolrResult;
-import com.demo.service.solr.entity.SolrParam;
-import com.demo.service.solr.entity.SolrResult;
+import com.atms.service.solr.PdfSearch;
+import com.atms.service.solr.SolrUtil;
+import com.atms.service.solr.entity.HLSolrParam;
+import com.atms.service.solr.entity.HLSolrResult;
+import com.atms.service.solr.entity.SolrParam;
+import com.atms.service.solr.entity.SolrResult;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.apache.log4j.Logger;

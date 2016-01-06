@@ -1,4 +1,4 @@
-package com.demo.service.shiro.jar.core;
+package com.atms.service.shiro.jar.core;
 
 import java.security.MessageDigest;
 

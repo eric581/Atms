@@ -1,6 +1,6 @@
-package com.demo.config.validator;
+package com.atms.config.validator;
 
-import com.demo.entity.Blog;
+import com.atms.entity.Blog;
 import com.jfinal.core.Controller;
 import com.jfinal.validate.Validator;
 

@@ -1,4 +1,4 @@
-package com.demo.service.shiro.jar.core.handler;
+package com.atms.service.shiro.jar.core.handler;
 
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.subject.Subject;

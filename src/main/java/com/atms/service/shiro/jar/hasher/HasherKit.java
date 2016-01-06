@@ -1,4 +1,4 @@
-package com.demo.service.shiro.jar.hasher;
+package com.atms.service.shiro.jar.hasher;
 
 import org.apache.shiro.authc.credential.DefaultPasswordService;
 import org.apache.shiro.authc.credential.PasswordService;

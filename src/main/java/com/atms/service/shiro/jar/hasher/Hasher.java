@@ -1,7 +1,7 @@
 /**
  *  2013-1-7 上午11:12:33
  */
-package com.demo.service.shiro.jar.hasher;
+package com.atms.service.shiro.jar.hasher;
 
 /**
  * @author wangrenhui

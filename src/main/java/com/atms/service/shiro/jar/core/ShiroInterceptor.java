@@ -1,6 +1,6 @@
-package com.demo.service.shiro.jar.core;
+package com.atms.service.shiro.jar.core;
 
-import com.demo.service.shiro.jar.core.handler.AuthzHandler;
+import com.atms.service.shiro.jar.core.handler.AuthzHandler;
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
 import org.apache.shiro.authz.AuthorizationException;

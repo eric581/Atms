@@ -1,4 +1,4 @@
-package com.demo.service.shiro.jar;
+package com.atms.service.shiro.jar;
 
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -19,8 +19,8 @@ package com.demo.service.shiro.jar;
  * under the License.
  */
 
-import com.demo.service.shiro.jar.core.EncriptionKit;
-import com.demo.service.shiro.jar.exception.IncorrectCaptchaException;
+import com.atms.service.shiro.jar.core.EncriptionKit;
+import com.atms.service.shiro.jar.exception.IncorrectCaptchaException;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;

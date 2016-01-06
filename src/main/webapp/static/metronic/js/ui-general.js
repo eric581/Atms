@@ -136,14 +136,14 @@ var UIGeneral = function () {
     }
 
     var handleDynamicPagination = function() {
-        $('#dynamic_pager_demo1').bootpag({
+        $('#dynamic_pager.atms1').bootpag({
             total: 6,
             page: 1,
         }).on("page", function(event, num){
             $("#dynamic_pager_content1").html("Page " + num + " content here"); // or some ajax content loading...
         });
 
-        $('#dynamic_pager_demo2').bootpag({
+        $('#dynamic_pager.atms2').bootpag({
             total: 24,
             page: 1,
             maxVisible: 6 

@@ -1,7 +1,7 @@
-package com.demo.service.solr;
+package com.atms.service.solr;
 
-import com.demo.service.solr.entity.HLSolrParam;
-import com.demo.service.solr.entity.HLSolrResult;
+import com.atms.service.solr.entity.HLSolrParam;
+import com.atms.service.solr.entity.HLSolrResult;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import junit.framework.TestCase;

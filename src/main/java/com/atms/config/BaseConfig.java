@@ -1,8 +1,8 @@
-package com.demo.config;
+package com.atms.config;
 
-import com.demo.config.routes.*;
-import com.demo.service.shiro.jar.core.ShiroInterceptor;
-import com.demo.service.shiro.jar.core.ShiroPlugin;
+import com.atms.config.routes.*;
+import com.atms.service.shiro.jar.core.ShiroInterceptor;
+import com.atms.service.shiro.jar.core.ShiroPlugin;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;

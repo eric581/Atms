@@ -16,10 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.demo.service.shiro.jar;
+package com.atms.service.shiro.jar;
 
-import com.demo.service.shiro.jar.core.ReturnKit;
-import com.demo.service.shiro.jar.core.SubjectKit;
+import com.atms.service.shiro.jar.core.ReturnKit;
+import com.atms.service.shiro.jar.core.SubjectKit;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;

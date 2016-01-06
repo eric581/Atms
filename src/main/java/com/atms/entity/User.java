@@ -1,4 +1,4 @@
-package com.demo.entity;
+package com.atms.entity;
 
 import com.jfinal.plugin.activerecord.Model;
 

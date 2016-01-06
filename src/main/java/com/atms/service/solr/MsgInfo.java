@@ -1,4 +1,4 @@
-package com.demo.service.solr;
+package com.atms.service.solr;
 
 import org.apache.solr.client.solrj.beans.Field;
 

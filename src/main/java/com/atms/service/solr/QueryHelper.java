@@ -1,4 +1,4 @@
-package com.demo.service.solr;
+package com.atms.service.solr;
 
 import com.google.common.collect.Lists;
 import org.apache.solr.client.solrj.SolrQuery;
