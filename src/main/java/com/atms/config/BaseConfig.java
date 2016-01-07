@@ -1,5 +1,6 @@
 package com.atms.config;
 
+import com.atms.config.handler.SessionHandler;
 import com.atms.config.routes.*;
 import com.atms.service.shiro.jar.core.ShiroInterceptor;
 import com.atms.service.shiro.jar.core.ShiroPlugin;
@@ -30,7 +31,7 @@ public class BaseConfig extends JFinalConfig {
     public void configConstant(Constants me) {
         // 加载少量必要配置，随后可用getProperty(...)获取值
         loadPropertyFile("config.properties");
-        me.setViewType(ViewType.JSP);
+        me.setViewType(ViewType.JSP);//配置JSP视图
     }
 
     /**
@@ -49,16 +50,16 @@ public class BaseConfig extends JFinalConfig {
      * 配置插件
      */
     public void configPlugin(Plugins me) {
-        RedisPlugin redisPlugin = new RedisPlugin("test", getProperty("redis.url"), getProperty("redis.password"));
-        me.add(redisPlugin);
-        logger.info("redisPlugin config ok");
+        me.add(new RedisPlugin("test", getProperty("redis.url"), getProperty("redis.password")));
+        logger.info("redis插件加载成功");
 
         // 添加shiro插件
-        ShiroPlugin shiroPlugin = new ShiroPlugin(routes);
-        me.add(shiroPlugin);
+        me.add(new ShiroPlugin(routes));
+        logger.info("shiro插件加载成功");
 
         //添加缓存插件
         me.add(new EhCachePlugin());
+        logger.info("ehcache插件加载成功");
 
     }
 
@@ -73,7 +74,7 @@ public class BaseConfig extends JFinalConfig {
      * 配置处理器
      */
     public void configHandler(Handlers me) {
-
+        me.add(new SessionHandler());
     }
 
 

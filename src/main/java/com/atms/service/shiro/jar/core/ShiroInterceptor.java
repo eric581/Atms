@@ -25,7 +25,7 @@ public class ShiroInterceptor implements Interceptor {
     public void intercept(Invocation ai) {
         //路径权限 //注解权限
         List<AuthzHandler> ahs = ShiroKit.getAuthzHandler(ai.getController().getRequest(), ai.getActionKey());
-        //权限验证
+//        权限验证
         if (assertNoAuthorized(ai, ahs)) return;
         // 执行正常逻辑
         ai.invoke();

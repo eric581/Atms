@@ -9,7 +9,7 @@ var UIModals = function () {
 
        	var $modal = $('#ajax-modal');
  
-		$('#modal_ajax.atms_btn').on('click', function(){
+		$('#modal_ajax_demo_btn').on('click', function(){
 		  // create the backdrop and wait for next modal to be triggered
 		  $('body').modalmanager('loading');
 		 

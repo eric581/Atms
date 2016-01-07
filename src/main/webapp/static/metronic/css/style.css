@@ -29,7 +29,7 @@ light grey: #fafafa;
 /***
 Import fonts
 ***/
-@import url(../image/css);
+/*@import url(../image/css);*/
 
 /***
 Reset and overrides  
@@ -4294,13 +4294,13 @@ Bootstrap carousel css changes
 }
 
 /***
-Glyphicons.atms(new in v1.1.1)
+Glyphicons Demo(new in v1.1.1)
 ***/
-.glyphicons.atms {
+.glyphicons-demo {
   text-align: center;
 }
 
-.glyphicons.atms .glyphicons {
+.glyphicons-demo .glyphicons {
   display:inline-block;
   *display:inline;
   *zoom:1;
@@ -4312,30 +4312,30 @@ Glyphicons.atms(new in v1.1.1)
   text-align: left;
 }
 
-.glyphicons.atms .glyphicons i:before{
+.glyphicons-demo .glyphicons i:before{
   line-height:55px!important;
   color: #666;
 }
 
-.halfings.atms .white-content{
+.halfings-demo .white-content{
   margin:0 -20px 0 -20px;
   padding:20px;
   background:#000;
   background:rgba(0,0,0,0.9)
 }
 
-.halfings.atms .white-content *,
-.halfings.atms .white-content p,
-.halfings.atms .white-content a{
+.halfings-demo .white-content *,
+.halfings-demo .white-content p,
+.halfings-demo .white-content a{
   color:#fff
 }
 
-.halfings.atms h2 {
+.halfings-demo h2 {
   text-align: left;
 }
 
-.halfings.atms p,
-.halfings.atms a  {
+.halfings-demo p,
+.halfings-demo a  {
   width: 175px;
   font-size: 14px;
   line-height: 14px;
@@ -4344,8 +4344,8 @@ Glyphicons.atms(new in v1.1.1)
   margin-right: 10px;
 }
 
-.halfings.atms .halflings,
-.halfings.atms .halflings-icon {
+.halfings-demo .halflings, 
+.halfings-demo .halflings-icon {
   margin:0 5px 0 0
 }
 

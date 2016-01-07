@@ -13,6 +13,6 @@ import com.jfinal.config.Routes;
 public class LoginRoutes extends Routes {
     @Override
     public void config() {
-        add("/views/login", LoginController.class);
+        add("/login", LoginController.class);
     }
 }

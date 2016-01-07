@@ -13,7 +13,7 @@ var FormFileUpload = function () {
             });
 
             // Load existing files:
-            //.atms settings:
+            // Demo settings:
             $.ajax({
                 // Uncomment the following to send cross-domain cookies:
                 //xhrFields: {withCredentials: true},

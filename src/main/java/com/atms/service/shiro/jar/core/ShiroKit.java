@@ -1,18 +1,3 @@
-/**
- * Copyright (c) 2011-2013, dafei 李飞 (myaniu AT gmail DOT com)
- * <p/>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.atms.service.shiro.jar.core;
 
 import com.atms.service.shiro.jar.core.handler.AuthzHandler;
@@ -40,12 +25,16 @@ public class ShiroKit {
      * 用来记录那个action或者actionpath中是否有shiro认证注解。
      */
     private static ConcurrentMap<String, AuthzHandler> authzMaps = null;
+
     private static Map<String, AuthzHandler> authzJdbcMaps = null;
+
     public static AntPathMatcher antPathMatcher = new AntPathMatcher();
+
     /**
      * jdbc的权限加载器
      */
     private static JdbcAuthzService jdbcAuthzService;
+
     private static boolean and = false;
 
     /**
@@ -61,6 +50,7 @@ public class ShiroKit {
         //加载数据库权限
         loadJdbcAuthz();
     }
+
 
     static AuthzHandler getAuthzHandler(String actionKey) {
         return authzMaps.get(actionKey);
@@ -89,6 +79,9 @@ public class ShiroKit {
 
     /**
      * 判断是否已经存在一个相同的路径
+     *
+     * @param url url
+     * @return boolean
      */
     public static boolean hasJdbcAuthz(String url) {
         return authzJdbcMaps.containsKey(url);
@@ -124,8 +117,6 @@ public class ShiroKit {
      * @param clear 清除原来的权限
      */
     public static void loadJdbcAuthz(boolean clear) {
-        //加载数据库的url配置
-        //加载jdbc权限
         if (jdbcAuthzService != null) {
             if (clear) {
                 authzJdbcMaps.clear();
@@ -135,4 +126,3 @@ public class ShiroKit {
             log.error("authzJdbcService not found!can't load database url premission");
     }
 }
-

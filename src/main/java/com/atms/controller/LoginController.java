@@ -1,7 +1,12 @@
 package com.atms.controller;
 
 import com.jfinal.core.Controller;
+import com.jfinal.plugin.activerecord.Model;
 import org.apache.log4j.Logger;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
+import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 
 /**
  * Title:
@@ -15,11 +20,24 @@ public class LoginController extends Controller {
     private Logger logger = Logger.getLogger(BlogController.class);
 
     public void index() {
-        render("login.jsp");
+        render("/views/login/login.jsp");
     }
 
-    public void success(){
-        render("/");
+    public void go() {
+        SecurityUtils.getSubject().login(new UsernamePasswordToken(getPara("username"), getPara("password")));
+
+        Subject subject = SecurityUtils.getSubject();
+        if (subject.isAuthenticated() || subject.isRemembered()) {
+            redirect("/");
+            return;
+        }
+        redirect("/login");
+    }
+
+    public void out() {
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        redirect("/login");
     }
 
 }

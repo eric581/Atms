@@ -27,11 +27,7 @@ public class ShiroDbRealm extends AuthorizingRealm {
         // 通过表单接收的用户名
         String username = token.getUsername();
         if (username != null && !"".equals(username)) {
-            User user = new User();
-            user.set("username","eric");
-            user.set("password","eric");
-            return new SimpleAuthenticationInfo(
-                    user.get("username"), user.get("password"), getName());
+            return new SimpleAuthenticationInfo("eric", "eric", getName());
         }
         return null;
     }
