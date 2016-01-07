@@ -28,6 +28,7 @@ public class BaseConfig extends JFinalConfig {
     /**
      * 配置常量
      */
+    @Override
     public void configConstant(Constants me) {
         // 加载少量必要配置，随后可用getProperty(...)获取值
         loadPropertyFile("config.properties");
@@ -37,6 +38,7 @@ public class BaseConfig extends JFinalConfig {
     /**
      * 配置路由
      */
+    @Override
     public void configRoute(Routes me) {
         this.routes = me;
         me.add(new BlogRoutes());
@@ -49,6 +51,7 @@ public class BaseConfig extends JFinalConfig {
     /**
      * 配置插件
      */
+    @Override
     public void configPlugin(Plugins me) {
         me.add(new RedisPlugin("test", getProperty("redis.url"), getProperty("redis.password")));
         logger.info("redis插件加载成功");
@@ -66,6 +69,7 @@ public class BaseConfig extends JFinalConfig {
     /**
      * 配置全局拦截器
      */
+    @Override
     public void configInterceptor(Interceptors me) {
         me.add(new ShiroInterceptor());
     }
@@ -73,6 +77,7 @@ public class BaseConfig extends JFinalConfig {
     /**
      * 配置处理器
      */
+    @Override
     public void configHandler(Handlers me) {
         me.add(new SessionHandler());
     }

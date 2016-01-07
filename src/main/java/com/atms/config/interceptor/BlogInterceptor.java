@@ -8,6 +8,7 @@ import com.jfinal.aop.Invocation;
  */
 public class BlogInterceptor implements Interceptor {
 
+	@Override
 	public void intercept(Invocation ai) {
 		ai.invoke();
 	}
