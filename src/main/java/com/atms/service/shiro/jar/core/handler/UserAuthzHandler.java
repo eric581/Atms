@@ -39,7 +39,6 @@ public class UserAuthzHandler extends AbstractAuthzHandler {
     return null;
   }
 
-  @Override
   public void assertAuthorized() throws AuthorizationException {
     Subject subject = getSubject();
     if (subject.getPrincipal() == null) {

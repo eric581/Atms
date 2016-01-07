@@ -38,7 +38,6 @@ public class PermissionAuthzHandler extends AbstractAuthzHandler {
     this.annotation = null;
   }
 
-  @Override
   public void assertAuthorized() throws AuthorizationException {
     Subject subject = getSubject();
 

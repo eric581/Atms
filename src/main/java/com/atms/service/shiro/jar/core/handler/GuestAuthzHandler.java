@@ -34,7 +34,6 @@ public class GuestAuthzHandler extends AbstractAuthzHandler {
     return gah;
   }
 
-  @Override
   public void assertAuthorized() throws AuthorizationException {
     Subject subject = getSubject();
 

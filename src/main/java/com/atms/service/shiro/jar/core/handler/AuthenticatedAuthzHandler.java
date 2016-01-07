@@ -35,7 +35,6 @@ public class AuthenticatedAuthzHandler extends AbstractAuthzHandler {
     return aah;
   }
 
-  @Override
   public void assertAuthorized() throws AuthorizationException {
     if (!getSubject().isAuthenticated()) {
       throw new UnauthenticatedException("The current Subject is not authenticated.  Access denied.");
