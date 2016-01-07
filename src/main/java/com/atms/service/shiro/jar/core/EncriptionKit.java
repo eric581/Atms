@@ -2,19 +2,9 @@ package com.atms.service.shiro.jar.core;
 
 import java.security.MessageDigest;
 
-/**
- * Title:
- * Description:
- *
- * @author:eric
- * @date: 2015-12-16 15:51
- */
-public class EncriptionKit
-{
-    public static final String encrypt(String srcStr)
-    {
-        try
-        {
+public class EncriptionKit {
+    public static final String encrypt(String srcStr) {
+        try {
             String result = "";
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] bytes = md.digest(srcStr.getBytes("utf-8"));
@@ -28,8 +18,7 @@ public class EncriptionKit
         }
     }
 
-    public static String toHexString(String s)
-    {
+    public static String toHexString(String s) {
         String str = "";
         for (int i = 0; i < s.length(); i++) {
             int ch = s.charAt(i);
@@ -38,27 +27,23 @@ public class EncriptionKit
         return str;
     }
 
-    public static String textEncrypt(String text, String salt)
-    {
-        try
-        {
+    public static String textEncrypt(String text, String salt) {
+        try {
             EncryptionTextKit textEncryptor = new EncryptionTextKit(salt);
             return textEncryptor.encrypt(text);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        catch (Exception e) {
-            e.printStackTrace(); }
         return null;
     }
 
-    public static String textDecrypt(String text, String salt)
-    {
-        try
-        {
+    public static String textDecrypt(String text, String salt) {
+        try {
             EncryptionTextKit textEncryptor = new EncryptionTextKit(salt);
             return textEncryptor.decrypt(text);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        catch (Exception e) {
-            e.printStackTrace(); }
         return null;
     }
 }

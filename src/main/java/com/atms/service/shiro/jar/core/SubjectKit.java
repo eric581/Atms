@@ -11,111 +11,111 @@ import org.apache.shiro.subject.Subject;
 
 public class SubjectKit {
 
-  private static String[] baseRole = new String[]{"R_ADMIN", "R_MANAGER", "R_MEMBER", "R_USER"};
+    private static String[] baseRole = new String[]{"R_ADMIN", "R_MANAGER", "R_MEMBER", "R_USER"};
 
-  private SubjectKit() {
-  }
-
-
-  public static Subject getSubject() {
-    return SecurityUtils.getSubject();
-  }
-
-  public static Session getSession() {
-    Subject subject = SecurityUtils.getSubject();
-    Session session = subject.getSession();
-    if (session == null) {
-      throw new UnknownSessionException("Unable found required Session");
-    } else {
-      return session;
+    private SubjectKit() {
     }
-  }
 
-  /**
-   * 获取用户对象
-   *
-   * @param <T> User
-   * @return T User
-   */
-  public static <T extends Model> T getUser() {
-    Subject subject = getSubject();
-    Object user = subject.getPrincipal();
-    if (user == null)
-      return null;
-    else {
-      return (T) user;
+
+    public static Subject getSubject() {
+        return SecurityUtils.getSubject();
     }
-  }
 
-  /**
-   * login user
-   *
-   * @param username 用户名
-   * @param password 密码
-   *                 //   * @param user     完整用户对象
-   *                 //   * @param <T>      User
-   * @return bolean
-   */
-  public static boolean login(String username, String password) {
-    return login(username, password, false);
-  }
-
-  public static boolean login(String username, String password, boolean rememberMe) {
-    UsernamePasswordToken token = new UsernamePasswordToken(username, password);
-    try {
-      token.setRememberMe(rememberMe);
-      SecurityUtils.getSubject().login(token);
-      return true;
-    } catch (AuthenticationException e) {
-      return false;
+    public static Session getSession() {
+        Subject subject = SecurityUtils.getSubject();
+        Session session = subject.getSession();
+        if (session == null) {
+            throw new UnknownSessionException("Unable found required Session");
+        } else {
+            return session;
+        }
     }
-  }
 
-
-  /**
-   * 验证验证码
-   *
-   * @param captchaToken token
-   * @return boolean
-   */
-  public static boolean doCaptcha(String captchaName, String captchaToken) {
-    Session session = getSession();
-    if (session.getAttribute(captchaName) != null) {
-      String captcha = session.getAttribute(captchaName).toString();
-      if (captchaToken != null &&
-          captcha.equalsIgnoreCase(EncriptionKit.encrypt(captchaToken))) {
-        return true;
-      }
+    /**
+     * 获取用户对象
+     *
+     * @param <T> User
+     * @return T User
+     */
+    public static <T extends Model> T getUser() {
+        Subject subject = getSubject();
+        Object user = subject.getPrincipal();
+        if (user == null)
+            return null;
+        else {
+            return (T) user;
+        }
     }
-    return false;
-  }
 
-  /**
-   * 判断是否已经登录
-   *
-   * @return boolean
-   */
-  public static boolean isAuthed() {
-    Subject subject = getSubject();
-    if (subject == null || subject.getPrincipal() == null || (!subject.isAuthenticated() && !subject.isRemembered())) {
-      return false;
-    } else
-      return true;
-  }
-
-  public static boolean wasBaseRole(String roleValue) {
-
-    if (ArrayUtils.contains(baseRole, roleValue)) {
-      return true;
+    /**
+     * login user
+     *
+     * @param username 用户名
+     * @param password 密码
+     *                 //   * @param user     完整用户对象
+     *                 //   * @param <T>      User
+     * @return bolean
+     */
+    public static boolean login(String username, String password) {
+        return login(username, password, false);
     }
-    return false;
-  }
 
-  public String[] getBaseRole() {
-    return baseRole;
-  }
+    public static boolean login(String username, String password, boolean rememberMe) {
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+        try {
+            token.setRememberMe(rememberMe);
+            SecurityUtils.getSubject().login(token);
+            return true;
+        } catch (AuthenticationException e) {
+            return false;
+        }
+    }
 
-  public void setBaseRole(String... baseRole) {
-    SubjectKit.baseRole = baseRole;
-  }
+
+    /**
+     * 验证验证码
+     *
+     * @param captchaToken token
+     * @return boolean
+     */
+    public static boolean doCaptcha(String captchaName, String captchaToken) {
+        Session session = getSession();
+        if (session.getAttribute(captchaName) != null) {
+            String captcha = session.getAttribute(captchaName).toString();
+            if (captchaToken != null &&
+                    captcha.equalsIgnoreCase(EncriptionKit.encrypt(captchaToken))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 判断是否已经登录
+     *
+     * @return boolean
+     */
+    public static boolean isAuthed() {
+        Subject subject = getSubject();
+        if (subject == null || subject.getPrincipal() == null || (!subject.isAuthenticated() && !subject.isRemembered())) {
+            return false;
+        } else
+            return true;
+    }
+
+    public static boolean wasBaseRole(String roleValue) {
+
+        if (ArrayUtils.contains(baseRole, roleValue)) {
+            return true;
+        }
+        return false;
+    }
+
+    public String[] getBaseRole() {
+        return baseRole;
+    }
+
+    public void setBaseRole(String... baseRole) {
+        SubjectKit.baseRole = baseRole;
+    }
 }
