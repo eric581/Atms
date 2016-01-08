@@ -18,13 +18,17 @@ public class LoginController extends Controller {
     private Logger logger = Logger.getLogger(BlogController.class);
 
     public void index() {
-        render("/views/login/login.jsp");
+        Subject subject = SecurityUtils.getSubject();
+        if (subject.isAuthenticated() || subject.isRemembered()) {
+            redirect("/");
+        } else {
+            render("/views/login/login.jsp");
+        }
     }
 
     public void go() {
-        SecurityUtils.getSubject().login(new UsernamePasswordToken(getPara("username"), getPara("password")));
-
         Subject subject = SecurityUtils.getSubject();
+        subject.login(new UsernamePasswordToken(getPara("username"), getPara("password")));
         if (subject.isAuthenticated() || subject.isRemembered()) {
             redirect("/");
             return;
