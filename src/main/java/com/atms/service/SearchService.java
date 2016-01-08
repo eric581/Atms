@@ -32,7 +32,7 @@ public class SearchService {
         return pdfSearchList;
     }
 
-    public List<PdfSearch> hlSearch() {
+    public List<PdfSearch> hlSearch(String query) {
         HLSolrParam hlSolrParam = new HLSolrParam();
         hlSolrParam.setPre("<span style=\"color:red\">");
         hlSolrParam.setPost("</span>");
@@ -40,7 +40,7 @@ public class SearchService {
         PdfSearch pdfSearchParam = new PdfSearch();
         hlSolrParam.setT(pdfSearchParam);
         Map<String, String> param = Maps.newHashMap();
-        param.put("text", "Google");
+        param.put("text", query);
         hlSolrParam.setHlParam(param);
 
 

@@ -88,17 +88,15 @@ public class SolrUtil {
             SolrClient solrClient = new HttpSolrClient(SOLR_SERVER_URL);
 
             SolrQuery solrQuery = new SolrQuery();
-//            String param = getParams(solrParam.getT());//平装查询参数
-            solrQuery.setQuery("text:\"管理\"");
-//            solrQuery.addSort(solrParam.getSortParam(), solrParam.getSort());//sort config
+            solrQuery.setQuery("text:" + solrParam.getHlParam().get("text"));
 
             Map<String, String> hlParam = solrParam.getHlParam();//add highlight config
             solrQuery.setHighlightSimplePre(solrParam.getPre());
             solrQuery.setHighlightSimplePost(solrParam.getPost());
             solrQuery.setParam("hl", "true");
             for (Map.Entry<String, String> entry : hlParam.entrySet()) {
-//                solrQuery.setParam("fl", entry.getValue());
                 solrQuery.setParam("hl.fl", entry.getKey());
+                solrQuery.setParam("hl.maxAlternateFieldLength","50");
             }
 
             QueryResponse queryResponse = solrClient.query(COLLECTION, solrQuery);
@@ -111,7 +109,7 @@ public class SolrUtil {
             int QTime = queryResponse.getQTime();//获取在solr内查询的时间
             logger.info("status:{},elapsedTime:{},QTime:{}" + status, elapsedTime, QTime);
 
-            HLSolrResult<T> solrResult = new HLSolrResult<T>();
+            HLSolrResult<T> solrResult = new HLSolrResult<>();
             solrResult.setStatus(status);
             solrResult.setResultList(result);
             solrResult.setElapsedTime(elapsedTime);

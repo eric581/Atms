@@ -26,9 +26,10 @@ public class SearchController extends Controller {
 
     @RequiresPermissions(ShiroConst.PERMISSION_SEARCH)
     public void index() {
-        String param = getPara("param");
-        List<PdfSearch> pdfSearchList = searchService.hlSearch();
+        String query = getPara("query");
+        List<PdfSearch> pdfSearchList = searchService.hlSearch(query);
         setAttr("searchLists", pdfSearchList);
+        setAttr("query", query);
         render("/views/search/search.jsp");
     }
 }
