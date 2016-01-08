@@ -1,8 +1,8 @@
 package com.atms.service.shiro;
 
-import com.atms.entity.User;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.slf4j.Logger;
@@ -16,13 +16,17 @@ public class ShiroDbRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(
             PrincipalCollection principals) {
-        System.out.println("进入查询回调函数, 进行鉴权但缓存中无用户的授权信息时调用");
-        return null;
+        logger.debug("shiro开始授权");
+        SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
+        simpleAuthorizationInfo.addStringPermission(ShiroConst.PERMISSION_LOGIN);
+        simpleAuthorizationInfo.addStringPermission(ShiroConst.PERMISSION_SEARCH);
+        return simpleAuthorizationInfo;
     }
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(
             AuthenticationToken authcToken) throws AuthenticationException {
+        logger.debug("shiro开始登录认证");
         UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
         // 通过表单接收的用户名
         String username = token.getUsername();

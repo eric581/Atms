@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Title:
+ * Title:Session处理器
  * Description:修复 url:test;JSESSIONID=XXXXXXXXXXX 形式url会话丢失问题
  *
  * @author:eric

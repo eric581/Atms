@@ -1,12 +1,10 @@
 package com.atms.controller;
 
 import com.jfinal.core.Controller;
-import com.jfinal.plugin.activerecord.Model;
 import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 
 /**
  * Title:

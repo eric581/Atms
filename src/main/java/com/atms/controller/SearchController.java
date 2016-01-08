@@ -1,10 +1,12 @@
 package com.atms.controller;
 
 import com.atms.service.SearchService;
+import com.atms.service.shiro.ShiroConst;
 import com.atms.service.solr.PdfSearch;
 import com.jfinal.aop.Enhancer;
 import com.jfinal.core.Controller;
 import org.apache.log4j.Logger;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 
 import java.util.List;
 
@@ -22,6 +24,7 @@ public class SearchController extends Controller {
     public static final SearchService searchService = Enhancer.enhance(SearchService.class);
 
 
+    @RequiresPermissions(ShiroConst.PERMISSION_SEARCH)
     public void index() {
         String param = getPara("param");
         List<PdfSearch> pdfSearchList = searchService.hlSearch();
