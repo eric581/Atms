@@ -5,11 +5,11 @@ import com.atms.service.solr.entity.HLSolrResult;
 import com.atms.service.solr.entity.SolrParam;
 import com.atms.service.solr.entity.SolrResult;
 import com.google.common.collect.Lists;
+import org.apache.log4j.Logger;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
@@ -27,7 +27,7 @@ import java.util.Map;
  */
 public class SolrUtil {
 
-    public static Logger logger = LoggerFactory.getLogger(SolrUtil.class);
+    public static Logger logger = Logger.getLogger(SolrUtil.class);
 
     public static String SOLR_SERVER_URL = "http://localhost:8983/solr";
 
@@ -40,9 +40,9 @@ public class SolrUtil {
             SolrClient solrClient = new HttpSolrClient(SOLR_SERVER_URL);
             QueryResponse queryResponse = solrClient.query(COLLECTION, new SolrQuery("*:*"));
             result = queryResponse.getBeans(clazz);
-            logger.info("检索耗时：{}", System.currentTimeMillis() - begin);
+            logger.info("检索耗时:" + String.valueOf(System.currentTimeMillis() - begin));
         } catch (Exception e) {
-            logger.error("全文检索异常：{}", e.getMessage());
+            logger.error("全文检索异常:" + e.getMessage());
         }
         return result;
     }
@@ -67,16 +67,15 @@ public class SolrUtil {
             int status = queryResponse.getStatus();//status
             Long elapsedTime = queryResponse.getElapsedTime();//除查询时间，还包括传输，序列化，反序列化等的时间
             int QTime = queryResponse.getQTime();//获取在solr内查询的时间
-            logger.info("status:{},elapsedTime:{},QTime:{}" + status, elapsedTime, QTime);
 
             SolrResult<T> solrResult = new SolrResult<T>();
             solrResult.setStatus(status);
             solrResult.setResultList(result);
             solrResult.setElapsedTime(elapsedTime);
-            logger.info("查询耗时：{}", System.currentTimeMillis() - begin);
+            logger.info("检索耗时:" + String.valueOf(System.currentTimeMillis() - begin));
             return solrResult;
         } catch (Exception e) {
-            logger.error("全文检索异常：{}", e.getMessage());
+            logger.error("全文检索异常:" + e.getMessage());
         }
         return null;
     }
@@ -96,7 +95,7 @@ public class SolrUtil {
             solrQuery.setParam("hl", "true");
             for (Map.Entry<String, String> entry : hlParam.entrySet()) {
                 solrQuery.setParam("hl.fl", entry.getKey());
-                solrQuery.setParam("hl.maxAlternateFieldLength","50");
+                solrQuery.setParam("hl.maxAlternateFieldLength", "50");
             }
 
             QueryResponse queryResponse = solrClient.query(COLLECTION, solrQuery);
@@ -107,17 +106,16 @@ public class SolrUtil {
             int status = queryResponse.getStatus();//status
             Long elapsedTime = queryResponse.getElapsedTime();//除查询时间，还包括传输，序列化，反序列化等的时间
             int QTime = queryResponse.getQTime();//获取在solr内查询的时间
-            logger.info("status:{},elapsedTime:{},QTime:{}" + status, elapsedTime, QTime);
 
             HLSolrResult<T> solrResult = new HLSolrResult<>();
             solrResult.setStatus(status);
             solrResult.setResultList(result);
             solrResult.setElapsedTime(elapsedTime);
             solrResult.setHighlightResults(highlightResult);
-            logger.info("查询耗时：{}", System.currentTimeMillis() - begin);
+            logger.info("检索耗时:" + String.valueOf(System.currentTimeMillis() - begin));
             return solrResult;
         } catch (Exception e) {
-            logger.error("全文检索异常：{}", e.getMessage());
+            logger.error("全文检索异常:" + e.getMessage());
         }
         return null;
     }
@@ -140,16 +138,15 @@ public class SolrUtil {
             int status = queryResponse.getStatus();//status
             Long elapsedTime = queryResponse.getElapsedTime();//除查询时间，还包括传输，序列化，反序列化等的时间
             int QTime = queryResponse.getQTime();//获取在solr内查询的时间
-            logger.info("status:{},elapsedTime:{},QTime:{}" + status, elapsedTime, QTime);
 
             SolrResult<T> solrResult = new SolrResult<T>();
             solrResult.setStatus(status);
             solrResult.setResultList(result);
             solrResult.setElapsedTime(elapsedTime);
-            logger.info("查询耗时：{}", System.currentTimeMillis() - begin);
+            logger.info("检索耗时:" + String.valueOf(System.currentTimeMillis() - begin));
             return solrResult;
         } catch (Exception e) {
-            logger.error("全文检索异常：{}", e.getMessage());
+            logger.error("全文检索异常:" + e.getMessage());
         }
         return null;
     }
@@ -166,9 +163,9 @@ public class SolrUtil {
 
             QueryResponse queryResponse = solrClient.query(COLLECTION, solrQuery);
             result = queryResponse.getBeans(clazz);
-            logger.info("查询耗时：{}", System.currentTimeMillis() - begin);
+            logger.info("检索耗时:" + String.valueOf(System.currentTimeMillis() - begin));
         } catch (Exception e) {
-            logger.error("全文检索异常：{}", e.getMessage());
+            logger.error("全文检索异常:" + e.getMessage());
         }
         return result;
     }
