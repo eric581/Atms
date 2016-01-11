@@ -1,17 +1,15 @@
 package com.atms.service.shiro;
 
+import org.apache.log4j.Logger;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ShiroDbRealm extends AuthorizingRealm {
 
-    private static final Logger logger = LoggerFactory
-            .getLogger(ShiroDbRealm.class);
+    private static final Logger logger = Logger.getLogger(ShiroDbRealm.class);
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(

@@ -5,6 +5,7 @@ import com.atms.service.solr.entity.HLSolrResult;
 import com.atms.service.solr.entity.SolrParam;
 import com.atms.service.solr.entity.SolrResult;
 import com.google.common.collect.Lists;
+import com.jfinal.kit.PropKit;
 import org.apache.log4j.Logger;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
@@ -29,9 +30,14 @@ public class SolrUtil {
 
     public static Logger logger = Logger.getLogger(SolrUtil.class);
 
-    public static String SOLR_SERVER_URL = "http://localhost:8983/solr";
+    public static String SOLR_SERVER_URL;
 
-    public static String COLLECTION = "tika";
+    public static String COLLECTION;
+
+    static {
+        SOLR_SERVER_URL = PropKit.get("solr.server");
+        COLLECTION = PropKit.get("solr.collection");
+    }
 
     public static <T> List<T> query(Class<T> clazz) {
         List<T> result = Lists.newArrayList();
