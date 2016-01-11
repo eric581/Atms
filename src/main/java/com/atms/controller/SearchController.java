@@ -31,6 +31,5 @@ public class SearchController extends Controller {
         setAttr("searchLists", pdfSearchList);
         setAttr("query", query);
         render("/views/search/search.jsp");
-//        render("/views/error/404.jsp");
     }
 }
