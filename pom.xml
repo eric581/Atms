@@ -10,11 +10,12 @@
     <packaging>war</packaging>
 
     <properties>
-        <com.jfinal.version>2.0</com.jfinal.version>
+        <com.jfinal.version>2.1</com.jfinal.version>
         <org.mongodb.version>3.1.1</org.mongodb.version>
         <redis.clients.version>2.8.0</redis.clients.version>
         <org.apache.shiro.version>1.2.4</org.apache.shiro.version>
-        <org.apache.solr>5.3.0</org.apache.solr>
+        <org.apache.solr.version>5.3.0</org.apache.solr.version>
+        <com.alibaba.version>1.0.16</com.alibaba.version>
     </properties>
 
     <dependencies>
@@ -142,7 +143,7 @@
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-core</artifactId>
-            <version>${org.apache.solr}</version>
+            <version>${org.apache.solr.version}</version>
             <exclusions><!--屏蔽掉solr对jetty 9版本的依赖，解决使用run方法报错的bug-->
                 <exclusion>
                     <groupId>org.eclipse.jetty</groupId>
@@ -205,7 +206,13 @@
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-solrj</artifactId>
-            <version>${org.apache.solr}</version>
+            <version>${org.apache.solr.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${com.alibaba.version}</version>
         </dependency>
 
     </dependencies>

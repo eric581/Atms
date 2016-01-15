@@ -1,6 +1,6 @@
 package com.demo.service;
 
-import com.atms.service.SearchService;
+import com.atms.app.search.service.SearchService;
 import com.jfinal.aop.Enhancer;
 import junit.framework.TestCase;
 
